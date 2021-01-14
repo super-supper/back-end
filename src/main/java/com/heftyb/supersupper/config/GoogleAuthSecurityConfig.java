@@ -46,14 +46,16 @@ public class GoogleAuthSecurityConfig extends WebSecurityConfigurerAdapter
                 "/logout",
                 "/info")
             .authenticated()
+            .anyRequest()
+            .authenticated()
             .and()
             .exceptionHandling()
             .and()
             .oauth2Login()
-            .userInfoEndpoint()
-            .oidcUserService(oAuth2UserService)
-            .and()
-            .successHandler(oAuth2LoginSuccessHandler);
+                .userInfoEndpoint()
+                .oidcUserService(oAuth2UserService)
+                .and()
+                .successHandler(oAuth2LoginSuccessHandler);
 
 
         // process CORS annotations
