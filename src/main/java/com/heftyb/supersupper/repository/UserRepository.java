@@ -1,7 +1,9 @@
 package com.heftyb.supersupper.repository;
 
 import com.heftyb.supersupper.models.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.List;
 
@@ -9,7 +11,7 @@ import java.util.List;
  * The CRUD repository connecting User to the rest of the application
  */
 public interface UserRepository
-    extends CrudRepository<User, Long>
+    extends JpaRepository<User, Long>
 {
     /**
      * Find a user based off over username
